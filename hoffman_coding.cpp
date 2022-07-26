@@ -39,17 +39,6 @@ void fun(vector<char>character,vector<int>freq,int n){
   }
 }
 
-int main(){
-    int t;
-    cin>>t;
-    while(t--){
-        fun();
-    }
-    return 0;
-}
-
-
-
 
 
 
