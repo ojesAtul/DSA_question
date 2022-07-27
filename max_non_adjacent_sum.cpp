@@ -1,7 +1,7 @@
 
 #include<bits/stdc++.h>
-#include<vector>
-int max_non_adj_sum(vector<int>& arr){
+using namespace std;
+int max_non_adj_sum(vector<int>arr){
     int n=arr.size();
     int dp[n];
     dp[0]=arr[0];
@@ -15,6 +15,6 @@ int main(){
     int t;
     cin>>t;
     while(t--){
-        max_non_adj_sum({});
+        max_non_adj_sum({1,3});
     }
 }
