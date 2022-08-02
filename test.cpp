@@ -1,31 +1,60 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define int long long int 
+
 bool cmp(int a,int b){
-    return a>b;
+    return a%10<=b%10;
 }
 void solve(){
-   int n,m;
-   cin>>n>>m;
-   int arr[m];
-   for(int i=0;i<m;i++){
+ int n;
+ cin>>n;
+ int arr[n];
+ unordered_map<int,vector<int> >mp;
+
+ for(int i=0;i<n;i++)
+ {
     cin>>arr[i];
+ }
+ sort(arr,arr+n);
+ for(int i=0;i<n;i++)
+ {
+   if(arr[i]%10==0){
+    mp[0].push_back(arr[i]);
    }
-   sort(arr,arr+m);
-   vector<int>pq;
-   for(int i=0;i<m;i++){
-      int x=i;
-      int y=(i+1)%m;
-      int t=(arr[y]-arr[i]-1+n)%n;
-        pq.push_back(t);
-   }
-    sort(pq.begin(),pq.end(),cmp);
-    int cnt=0;
-    int ans=0;
-    for(int i=0;i<pq.size();i++){
-       ans+=max(0LL,pq[i]-2*cnt-1);
+   else if(arr[i]%10==5)
+    mp[5].push_back(arr[i]);
+    else{
+        mp[3].push_back(arr[i]);
     } 
-    cout<<n-ans<<endl;
+ }
+if(mp.size()>2){
+    cout<<"NO"<<endl;
+}
+else if(mp.size()==2){
+  if(mp.find(3)!=mp.end()){
+    cout<<"NO"<<endl;
+  }
+  else{
+    if(mp[0].size()>2&&mp[0][0]!=mp[0].back()){
+        cout<<"NO"<<endl;
+    }
+    else if(mp[5].size()>2&&mp[5][0]!=mp[5].back()&&mp[5][0]+5==mp[0][0]){
+        cout<<"NO"<<endl;
+    }
+  }
+}
+else if(mp.size()==1&&mp.find(0)==mp.end()&&mp.find(5)==mp.end()){
+    cout<<"YES"<<endl;
+}
+else{
+    if(mp[0].size()>1&&mp[0][0]!=mp[0].back()){
+       cout<<"NO"<<endl;
+    }
+    else if()
+}
+
+
+
 }
 int32_t main(){
     int t=1;

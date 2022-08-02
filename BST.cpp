@@ -3,17 +3,6 @@
 using namespace std;
 #define int long long int
 
-
-/*
-
-Inorder => Left, Root, Right.
-
-Preorder => Root, Left, Right.
-
-Post order => Left, Right, Root.
-
-*/
-
 struct node{
   int val;
   node* left;
