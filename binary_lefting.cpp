@@ -1,3 +1,9 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+
+// if the kth ancester does not exist then got for the -1
 class TreeAncestor {
     int dp[18][50005];
 public:
@@ -36,5 +42,5 @@ public:
     }
 };
 
-
+// just use the above function to get the kth anscester
 
