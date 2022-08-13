@@ -66,3 +66,25 @@ public:
     return left+1+10000-right;
    }
 };
+
+void pushBottom(stack<int>&s,int &val){
+    if(s.empty()){
+       s.push(val);
+       return;
+    }
+    int Top=s.top();
+    s.pop();
+    pushBottom(s,val);
+    s.push(Top);
+
+}
+void reverseStack(stack<int>&s){
+    if(s.empty()){
+        return;
+    }
+    int topEL=s.top();
+    s.pop();
+    reverseStack(s);
+    pushBottom(s,topEL);
+}
+
