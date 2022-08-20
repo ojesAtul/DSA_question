@@ -4,6 +4,10 @@ using namespace std;
 
 // think also about it  iterative implemematation
 
+/*
+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
+*/
+
 struct node{
     int cnt;
     bool end;
