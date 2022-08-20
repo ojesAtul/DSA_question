@@ -34,4 +34,4 @@ int cnt_of_leaf(node* root){
     return lst+rst;
 }
 
-};
+};   
