@@ -1,0 +1,5 @@
+class mstream{
+	private:
+	
+	public:
+}
