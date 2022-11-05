@@ -19,7 +19,7 @@ int query(int si,int ss , int se,int qs,int qe){
 	if(qs>se || qe<ss)
 	 return INT_MIN;
 	else if(ss<=qs && qe <= se)
-	  return segtree[si]; 
+	  return segtree[si]; 	
     int mid=(ss+se)/2;
 	return min(query(2*si,ss,mid,qs,qe),query(2*si+1,mid+1,se,qs,qe));
 }
@@ -62,7 +62,7 @@ class lazySegmenttree{
 	if(lazytree[si]!=0){
 		int dx=lazytree[si];
 		lazytree[si]=0;
-		tree[si]=dx*(se-ss+1);
+		tree[si]+=dx*(se-ss+1);
 		if(ss!=se){
 			lazytree[2*si]+=dx;
 			lazytree[2*si+1]+=dx;
@@ -83,7 +83,7 @@ class lazySegmenttree{
       if(lazytree[si]!=0){
 		int dx=lazytree[si];
 		lazytree[si]=0;
-		tree[si]=dx*(se-ss+1);
+		tree[si]+=dx*(se-ss+1);
 		if(ss!=se){
 			lazytree[2*si]+=dx;
 			lazytree[2*si+1]+=dx;
@@ -104,6 +104,7 @@ class lazySegmenttree{
    int mid=(ss+se)/2;
    lazyUpdate(2*si,ss,mid,qs,qe,val);
    lazyUpdate(2*si+1,mid+1,se,qs,qe,val);
+   tree[si]=tree[2*si]+tree[2*si+1];
   }
 };
 
